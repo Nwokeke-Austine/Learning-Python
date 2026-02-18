@@ -6,11 +6,18 @@ number_of_students = int(input("How many students: "))
 
 for i in range(number_of_students):
     student = {}
-
+    print("-----------------------------------------------------")
     print("Student", i+1)
-    student["name"] = input("Enter Student's Name: ")
-    student["department"] = input("Enter Student's Department: ")
-    student["regno"] = input("Enter Registration Number: ")
+    name = input("Enter Student's Name: ")
+    department = input("Enter Student's Department: ")
+    regno = input("Enter Registration Number: ")
+
+    student = {
+        "name": name,
+        "department": department,
+        "regno": regno,
+
+    }
 
     students.append(student)
 
