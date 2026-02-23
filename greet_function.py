@@ -24,7 +24,7 @@ def student_info(name, regno, department):
 # for i in range(number_of_students):
 #     students = {}
 #     print(f"Student{i+1}")
-    student_info(input("Enter your name: "), int(input("Enter your age: ")) , input("Enter your department: ") )
+student_info(input("Enter your name: "), int(input("Enter your age: ")) , input("Enter your department: ") )
 
     # student.append(student_info)
 
