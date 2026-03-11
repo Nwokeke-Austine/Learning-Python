@@ -11,15 +11,15 @@ students_list = []
 
 #grade function
 def calculate_grade(score):
-    if score > 70:
+    if score >= 70:
         return("A")
-    elif score > 60:
+    elif score >= 60:
         return("B")
-    elif score > 50:
+    elif score >= 50:
         return("C")
-    elif score > 45:
+    elif score >= 45:
         return("D")
-    elif score > 40:
+    elif score >= 40:
         return("E")
     else:
         return("F")
@@ -31,8 +31,12 @@ for i in range(num_of_students):
     department = input("Enter department of student: ")
     regno = input("Enter registration number: ")
     level = int(input("Enter Level: "))
-    score = int(input("Student Score: "))
-    grade = calculate_grade(score)
+    while True:
+        score = int(input("Student Score: "))
+        if 0 <= score <= 100:
+            break
+        print("Invalid score! Please enter a number between 0 and 100.")
+        grade = calculate_grade(score)
 
     student = {
     "Name" : name,
