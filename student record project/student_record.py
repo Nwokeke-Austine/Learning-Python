@@ -36,7 +36,7 @@ for i in range(num_of_students):
         if 0 <= score <= 100:
             break
         print("Invalid score! Please enter a number between 0 and 100.")
-        grade = calculate_grade(score)
+    grade = calculate_grade(score)
 
     student = {
     "Name" : name,
@@ -53,10 +53,14 @@ print("\n------ STUDENT RECORDS ------")
 
 for student in students_list:
     print("---------------------------")
-    print("Name:", student["Name"])
-    print("Department:", student["Department"])
-    print("Registration Number:", student["Registration Number"])
-    print("Level:", student["Level"])
-    print("Score:", student["Score"])
-    print("Grade:", student["Grade"])
+    for key, value in student.items():
+        print(f"{key}: {value}")
+    # print("---------------------------")
+    # print("Name:", student["Name"])
+    # print("Department:", student["Department"])
+    # print("Registration Number:", student["Registration Number"])
+    # print("Level:", student["Level"])
+    # print("Score:", student["Score"])
+    # print("Grade:", student["Grade"])
 
+# highest_score = 
