@@ -1,61 +1,80 @@
+import random
 
-secretNumber = int(input("Enter Secret Number: "))
-attempt = 5
 
-while True:
+
+difficultylevel = int(input("Select Difficulty: \n1. Easy\n2. Medium\n3. Hard\nDifficulty Level: "))
+if difficultylevel == 1:
+    secretNumber = random.randint(1, 10)
+    totalattempt = 10
+    attempt = 10
+
+elif difficultylevel == 2:
+    secretNumber = random.randint(1, 50)
+    totalattempt = 5
+    attempt = 5
+
+elif difficultylevel == 3:
+    secretNumber = random.randint(1, 100)
+    totalattempt = 3
+    attempt = 3
+
+
+
+
+while attempt > 0:
     guess = int(input(f"Guess the secret number:"))
 
     if guess == secretNumber:
-        attempt -= 1
+        print("--------------------")
         print("You are coorrect")
         print("--------------------")       
 
         break
 
-    elif guess > secretNumber:
+    attempt -= 1
+
+    if guess > secretNumber:
         print("Too High")
-        attempt -= 1
         print(f"You have {attempt} Attempt left")
         print("--------------------")
 
     elif guess < secretNumber:
         print("Too Low")
-        attempt -= 1
         print(f"You have {attempt} Attempt left")
         print("--------------------")
 
     if attempt == 0:
         print("Game Over")
         print("--------------------")
-        break
+
+
+score = attempt / totalattempt * 100
+print(f"Score: {score}")
+
+
 
     # correct version
 # secretNumber = int(input("Enter Secret Number: "))
 # attempt = 5
 
-# while True:
-#     guess = int(input(f"Guess the secret number:"))
+# while attempt > 0:
+
+#     guess = int(input("Guess the secret number: "))
 
 #     if guess == secretNumber:
-#         attempt -= 1
-#         print("You are coorrect")
-#         print("--------------------")       
-
+#         print("You are correct")
 #         break
 
-#     elif guess > secretNumber:
+#     attempt -= 1
+
+#     if guess > secretNumber:
 #         print("Too High")
-#         attempt -= 1
-#         print(f"You have {attempt} Attempt left")
-#         print("--------------------")
 
 #     elif guess < secretNumber:
 #         print("Too Low")
-#         attempt -= 1
-#         print(f"You have {attempt} Attempt left")
-#         print("--------------------")
+
+#     print(f"You have {attempt} attempts left")
+#     print("--------------------")
 
 #     if attempt == 0:
 #         print("Game Over")
-#         print("--------------------")
-#         break
