@@ -7,11 +7,20 @@ students = [
 ]
 
 #print names of students who passed above 50
-studentpassed = 0
+# studentpassed = 0
+# for student in students:
+#     if student["Score"] >= 50:
+#         studentpassed += 1
+#         print(student["Name"])
+
+# print(f"Number of students that passed: {studentpassed}")
+
+#Find and print highest student
+highest_student = students[0]
+
 for student in students:
-    if student["Score"] >= 50:
-        studentpassed += 1
-        print(student["Name"])
+    if student["Score"] > highest_student["Score"]:
+        highest_student = student
 
-print(f"Number of students that passed: {studentpassed}")
-
+print("Top Student", highest_student["Name"])
+print("Score", highest_student["Score"])
